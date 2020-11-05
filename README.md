@@ -20,6 +20,22 @@ The below is the default one.
 
 Validate >> compile >> test >> package >> integration test >> verify >> install
 
+each one of them are known as phases. There is a relation between goals.
+
+### goals
+
+- Goals in maven are like tasks.
+- Multiple goal can be bound to a single lifecycle phase. or mostly its one to one bound b/w phases and goals.
+- we can execute a goal or a phase
+- Or there can be one to one mapping. below are some example
+
+    **PHASES*                  **GOALS** (plugin:goal)
+process-resources          resources:resources
+complile                   compile:compile
+package                    jar:jar
+
+> NOTE: no matter what we execute goals or phases, manve will execute all the pre-requisites.
+
 ## Terminologies associated with maven
 
 ### Plugin
