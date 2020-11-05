@@ -182,6 +182,11 @@ mvn archeype:generate
 - **build.testOutputDirectory**: default is ~/src/target/test-classes.
 - **build.scriptDirectory**: default is ~/src/main/scripts.
 - **modules**: define the modules that has-dependencies on this pom.
+- **localRepository**: defines where maven will save all the dependencies
+- **proxies**: to connect with maven remote server if any proxy are required it will go under this.
+- **servers**: authentication for custom maven repositories.
+- **mirrors**:
+- **profiles**: set of build processes, we may have multiple profiles. This can be used to override pom.xml setting
 
 ## MVN CLI
 
