@@ -79,7 +79,8 @@ for example: the "maven-compile-plugin" take verbose, source and target. *Soruce
 ### Multi-project Maven project
 
 - package of parent pom of multi-project is **pom**
-
+- mudules tag mention which all modules are build as part of this pom.
+- build the parent pom, all the child projects are build automatically.
 
 ### Modules
 
@@ -125,6 +126,26 @@ mvn test
 # plugin used: maven-install-plugin
 mvn package
 
+
+# purpose: run any maven command with -x option
+mvn -X clean install
+
+
+# purpose: to view the effective pom from command line instead of IDE
+mvn effective:pom
+mvn help:effective-pom
+
+
+# purpose: to print the dependency tree, it also includes the memory consumed
+mvn dependency:tree
+
+
+# purpose: to see the maven settigs
+mvn help:effective-settings
+
+
+# purpose: generate a project of specific architype, after going through a quentionnaire
+mvn archeype:generate
 ```
 
 ### Tags
