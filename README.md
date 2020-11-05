@@ -83,7 +83,20 @@ for example: the "maven-compile-plugin" take verbose, source and target. *Soruce
 
 ### Modules
 
-This is a concept available in multi project, where parent pom mentions these module's properties and dependencies etc are modified by this pom.
+- This is a concept available in multi project, where parent pom mentions these module's properties and dependencies etc are modified by this pom.
+- Each modules will have their own pom.
+- Folder name should be same as the module name.
+
+> BEST PRACTICES: version of clild POM are managed by parent if they are shared. Hence no need to define the <version> under dependencies of child pom.
+
+### Variables
+
+we have different types of variables:
+
+- properties: ${properties}
+- project: ${project.version}
+
+> BEST PRACTICES: use of same project.version are recommended in multi project.
 
 ## Maven commands:
 
@@ -118,7 +131,8 @@ mvn package
 
 - **project**: root of all pom.xml, this is encloses everything
 - **groupId**: **artifactId**: **version**
-- **properties**: properties are parametes that can be used in the pom or child pom.
+- **properties**: properties are parametes that can be used in the pom or child pom. Use case: similar version of multiple plugins or dependencies.
+- **properties.abc-foo-bar**: use it as ${abc-foo-bar} in the pom.
 - **packageing**: tell what package is required, jar, war or ear, or pom (for multi project, or act as a parent pom)
 - **dependencies**: project dependencies
 - **dependencies.dependency.exclusions**: exclude any transitive dependencies if not required.
