@@ -164,7 +164,7 @@ mvn help:effective-settings
 mvn archeype:generate
 ```
 
-### Tags
+## Tags
 
 - **project**: root of all pom.xml, this is encloses everything
 - **groupId**: **artifactId**: **version**
@@ -182,3 +182,7 @@ mvn archeype:generate
 - **build.testOutputDirectory**: default is ~/src/target/test-classes.
 - **build.scriptDirectory**: default is ~/src/main/scripts.
 - **modules**: define the modules that has-dependencies on this pom.
+
+## MVN CLI
+
+[Refer Official doc](http://maven.apache.org/ref/3.6.3/maven-embedder/cli.html)
