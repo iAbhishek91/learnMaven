@@ -105,6 +105,18 @@ for example: the "maven-compile-plugin" take verbose, source and target. *Soruce
 - Folder name should be same as the module name.
 
 > BEST PRACTICES: version of clild POM are managed by parent if they are shared. Hence no need to define the <version> under dependencies of child pom.
+	
+> NOTE: Said the above, if you dont mention <version> tag in the clild, the child modules can be build separately. Hence if the requirement is only to build the projects from parent pom, common tags are not required and they are inherited from parent pom. However, if we want to build the child module independently we need to have `<parent>` tags in the child pom.
+	
+	```yml
+		<parent>
+			<groupId>com.lbg.ip</groupId>
+			<artifactId>ip-app</atrifact>
+			<version>1.5.10-SNAPSHOT</version>
+		</parent>
+	```
+
+> NOTE: to update version we cant do it manually as we need to update all the child modules. For that use the command `mvn version:set && version:commit -Dnew-Version-1.2.2-SNAPHOT`
 
 ### Variables
 
